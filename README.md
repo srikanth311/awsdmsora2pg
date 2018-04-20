@@ -3,14 +3,14 @@
 This repository contains the code and cloudformation templates that supports migrating Large objects from AWS RDS Oracle to AWS RDS PostgreSQL.
 
 ### Prerequisites
-####You will need the following.
+#### You will need the following.
 ```
 • An oracle account to download the oracle client packages.
 • An AWS account that provides access to AWS services.
 • IAM user with access key and secret access key to configure AWS CLI.
 • For testing purpose the below mentioned services needs to be created in us-east-1a availability zone in us-east-1 region.
 ```
-####Additionally:
+#### Additionally:
 ```
 • We will configure all services in the same VPC and in us-east-1 region to simplify networking considerations.
 • The predefined database schema name and password in source RDS Oracle database are “awsorauser” and “awsorauser”.
@@ -19,7 +19,7 @@ This repository contains the code and cloudformation templates that supports mig
 • IMPORTANT: The cloud formation templates that are demonstrated use hard-coded usernames and passwords and open security groups. These are just for testing purpose, not intended for production use with out any modifications.
 ```
 ### AWS Components that are used
-####Following AWS components are needed for successful testing of this migration.
+#### Following AWS components are needed for successful testing of this migration.
 | Number | Component | Purpose |
 | --- | --- | --- |
 | Number | Component | Purpose |
@@ -29,9 +29,9 @@ This repository contains the code and cloudformation templates that supports mig
 | 4	| Amazon EC2 machine (m4.4xlarge) | 	This EC2 machine is used to move the data from RDS Oracle database to RDS postgresql database using ora2pg. We need to install 11.2 version of Oracle client on this machine instead of 12.2 version. Thus, we need two separate EC2 instances. |
 | 5	| AWS DMS instance | 	This DMS instance is needed to enable ongoing replication from source RDS oracle database to target RDS postgresql database. |
 
-###Implementation
-For detailed steps check AWS Blog article "".
-##### 1. Setting up VPC, Two Subnets, Security group, Source Oracle RDS Database from the snapshot, Target PostgreSQL RDS database and two EC2 instances for loading the test data and configuring ora2pg tool/software respectively. 
+### Implementation
+#### For detailed steps check AWS Blog article "".
+#### 1. Setting up VPC, Two Subnets, Security group, Source Oracle RDS Database from the snapshot, Target PostgreSQL RDS database and two EC2 instances for loading the test data and configuring ora2pg tool/software respectively. 
 ```
 • Create a AWS cloud formation stack using the template url :  https://s3.amazonaws.com/aws-bigdata-blog/artifacts/awsora2pgblogfiles/cftemplates/SetupOra2pgRequiredResources.template
 ```
