@@ -22,7 +22,6 @@ This repository contains the code and cloudformation templates that supports mig
 #### Following AWS components are needed for successful testing of this migration.
 | Number | Component | Purpose |
 | --- | --- | --- |
-| Number | Component | Purpose |
 | 1	| Amazon RDS Oracle instance | 	This is the source oracle database instance – will be restored from a provided snapshot. |
 | 2	| Amazon RDS Postgresql instance | 	This is the target postgresql instance – Our source oracle database will be migrated to this RDS postgresql instance. |
 | 3	| Amazon EC2 machine (m4.xlarge) | 	This EC2 machine is used to add new data into source oracle database while the initial migration is running from source RDS Oracle database to target Postgresql database. This machine uses oracle client version 12.2 as “sqlldr” comes with this version and is needed for adding new data into source RDS oracle database. |
